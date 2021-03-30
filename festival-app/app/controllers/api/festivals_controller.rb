@@ -1,4 +1,4 @@
-class FestivalsController < ApplicationController
+class Api::FestivalsController < ApplicationController
     def index
         render json: Festival.all
     end
