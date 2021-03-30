@@ -37,3 +37,24 @@ Migrating to ChangeDurationType (20210330074026)
   [1m[36mActiveRecord::InternalMetadata Load (2.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
   [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(3686529552143689230)[0m
   [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFestival Create (82.2ms)[0m  [1m[32mINSERT INTO "festivals" ("festival_name", "location", "duration", "description") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["festival_name", "Splore"], ["location", "Tapapakanga Regional Park, Auckland, New Zealand"], ["duration", 3], ["description", "Splore is a three-day music and arts festival staged annually on the shores of Tāpapakanga Regional Park – perhaps the most beautiful festival setting in the world.\n\nIt's more than a good place. It's a good place in your heart.\n\nThroughout the three days — and deep into the night — an eclectic lineup of musical artists from Aotearoa and abroad play the multiple festival stages. Performing arts, installations, workshops and forums unfold across the site. And people dance like nobody’s watching.\n\nIt's the best sort of party. But it's more than a party, it's a community. To come to Splore is to be part of Splore."]]
+  [1m[36mTRANSACTION (26.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3686529552143689230)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddLinkColumn (20210330074834)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(3686529552143689230)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3686529552143689230)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddLinkColumn (20210330074834)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (40.8ms)[0m  [1m[35mALTER TABLE "festivals" ADD "link" character varying[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20210330074834"]]
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(3686529552143689230)[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mFestival Load (0.5ms)[0m  [1m[34mSELECT "festivals".* FROM "festivals" WHERE "festivals"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFestival Update (40.4ms)[0m  [1m[33mUPDATE "festivals" SET "link" = $1 WHERE "festivals"."id" = $2[0m  [["link", "https://www.splore.net/"], ["id", 1]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
