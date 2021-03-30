@@ -70,3 +70,47 @@ Started GET "/favicon.ico" for ::1 at 2021-03-30 21:06:45 +1300
   
 ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
   
+Started GET "/" for ::1 at 2021-03-30 21:10:29 +1300
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/Nicole/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/railties-6.1.3.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/Nicole/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/railties-6.1.3.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 37.1ms | Allocations: 309)
+Completed 200 OK in 64ms (Views: 42.6ms | ActiveRecord: 0.0ms | Allocations: 2473)
+
+
+Started GET "/" for ::1 at 2021-03-30 21:10:52 +1300
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/Nicole/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/railties-6.1.3.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/Nicole/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/railties-6.1.3.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 30.0ms | Allocations: 309)
+Completed 200 OK in 51ms (Views: 34.0ms | ActiveRecord: 0.0ms | Allocations: 2473)
+
+
+Started GET "/favicon.ico" for ::1 at 2021-03-30 21:10:52 +1300
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/welcome" for ::1 at 2021-03-30 21:11:16 +1300
+  
+ActionController::RoutingError (uninitialized constant WelcomeController):
+  
+Started GET "/welcome" for ::1 at 2021-03-30 21:12:42 +1300
+Processing by WelcomeController#index as HTML
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 132)
+
+
+Started GET "/" for ::1 at 2021-03-30 21:17:53 +1300
+  [1m[35m (2.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/Nicole/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/railties-6.1.3.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/Nicole/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/railties-6.1.3.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 47.7ms | Allocations: 309)
+Completed 200 OK in 98ms (Views: 50.3ms | ActiveRecord: 0.0ms | Allocations: 2473)
+
+
+Started GET "/festivals" for ::1 at 2021-03-30 21:18:05 +1300
+Processing by FestivalsController#index as HTML
+  [1m[36mFestival Load (0.9ms)[0m  [1m[34mSELECT "festivals".* FROM "festivals"[0m
+  ↳ app/controllers/festivals_controller.rb:3:in `index'
+Completed 200 OK in 103ms (Views: 47.4ms | ActiveRecord: 41.4ms | Allocations: 5003)
+
+
