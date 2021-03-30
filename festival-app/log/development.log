@@ -114,3 +114,69 @@ Processing by FestivalsController#index as HTML
 Completed 200 OK in 103ms (Views: 47.4ms | ActiveRecord: 41.4ms | Allocations: 5003)
 
 
+Started GET "/festival" for ::1 at 2021-03-30 21:26:36 +1300
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/festival"):
+  
+Started GET "/festivals" for ::1 at 2021-03-30 21:26:42 +1300
+Processing by FestivalsController#index as */*
+  Parameters: {"title"=>"Exercise", "completed"=>false, "description"=>"Start running again", "festival"=>{"description"=>"Start running again"}}
+  [1m[36mFestival Load (9.3ms)[0m  [1m[34mSELECT "festivals".* FROM "festivals"[0m
+  ↳ app/controllers/festivals_controller.rb:3:in `index'
+Completed 200 OK in 61ms (Views: 16.4ms | ActiveRecord: 43.9ms | Allocations: 6306)
+
+
+Started POST "/festivals/create" for ::1 at 2021-03-30 21:30:33 +1300
+  
+ActionController::RoutingError (No route matches [POST] "/festivals/create"):
+  
+Started POST "/festival/create" for ::1 at 2021-03-30 21:30:41 +1300
+  
+ActionController::RoutingError (No route matches [POST] "/festival/create"):
+  
+Started POST "/festivals" for ::1 at 2021-03-30 21:31:42 +1300
+  [1m[35m (41.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by FestivalsController#create as */*
+  Parameters: {"festival_name"=>"Rhythm & Vines", "location"=>"Waiohika Estate, Gisborne, New Zealand", "duration"=>3, "description"=>"Rhythm and Vines is a three day music festival held in Gisborne, New Zealand across December 29th to the 31st every year. It is globally known as the first festival in the world to welcome in the first sunrise of the new year.  The festival was founded in 2003 by University of Otago friends Hamish Pinkham, Tom Gibson, and Andrew Witters. They wanted to hold an event for their friends to bring in the New Year in a safe and beautiful location with entertainment from up-and-coming and established New Zealand musicians. Little did they know that their little party would eventually become a right of passage for over 350,000 kiwis and attract international visitors and touring artists from across the globe.", "link"=>"https://www.rhythmandvines.co.nz/", "festival"=>{"festival_name"=>"Rhythm & Vines", "location"=>"Waiohika Estate, Gisborne, New Zealand", "duration"=>3, "description"=>"Rhythm and Vines is a three day music festival held in Gisborne, New Zealand across December 29th to the 31st every year. It is globally known as the first festival in the world to welcome in the first sunrise of the new year.  The festival was founded in 2003 by University of Otago friends Hamish Pinkham, Tom Gibson, and Andrew Witters. They wanted to hold an event for their friends to bring in the New Year in a safe and beautiful location with entertainment from up-and-coming and established New Zealand musicians. Little did they know that their little party would eventually become a right of passage for over 350,000 kiwis and attract international visitors and touring artists from across the globe.", "link"=>"https://www.rhythmandvines.co.nz/"}}
+  [1m[36mTRANSACTION (3.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/festivals_controller.rb:7:in `create'
+  [1m[36mFestival Create (1.0ms)[0m  [1m[32mINSERT INTO "festivals" ("festival_name", "location", "duration", "description", "link") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["festival_name", "Rhythm & Vines"], ["location", "Waiohika Estate, Gisborne, New Zealand"], ["duration", 3], ["description", "Rhythm and Vines is a three day music festival held in Gisborne, New Zealand across December 29th to the 31st every year. It is globally known as the first festival in the world to welcome in the first sunrise of the new year.  The festival was founded in 2003 by University of Otago friends Hamish Pinkham, Tom Gibson, and Andrew Witters. They wanted to hold an event for their friends to bring in the New Year in a safe and beautiful location with entertainment from up-and-coming and established New Zealand musicians. Little did they know that their little party would eventually become a right of passage for over 350,000 kiwis and attract international visitors and touring artists from across the globe."], ["link", "https://www.rhythmandvines.co.nz/"]]
+  ↳ app/controllers/festivals_controller.rb:7:in `create'
+  [1m[36mTRANSACTION (42.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/festivals_controller.rb:7:in `create'
+Completed 500 Internal Server Error in 96ms (ActiveRecord: 56.3ms | Allocations: 10044)
+
+
+  
+NameError (undefined local variable or method `featival' for #<FestivalsController:0x007fbf4f8945e8>
+Did you mean?  festival):
+  
+app/controllers/festivals_controller.rb:15:in `create'
+Started POST "/festivals" for ::1 at 2021-03-30 21:32:11 +1300
+Processing by FestivalsController#create as */*
+  Parameters: {"festival_name"=>"Rhythm & Vines", "location"=>"Waiohika Estate, Gisborne, New Zealand", "duration"=>3, "description"=>"Rhythm and Vines is a three day music festival held in Gisborne, New Zealand across December 29th to the 31st every year. It is globally known as the first festival in the world to welcome in the first sunrise of the new year.  The festival was founded in 2003 by University of Otago friends Hamish Pinkham, Tom Gibson, and Andrew Witters. They wanted to hold an event for their friends to bring in the New Year in a safe and beautiful location with entertainment from up-and-coming and established New Zealand musicians. Little did they know that their little party would eventually become a right of passage for over 350,000 kiwis and attract international visitors and touring artists from across the globe.", "link"=>"https://www.rhythmandvines.co.nz/", "festival"=>{"festival_name"=>"Rhythm & Vines", "location"=>"Waiohika Estate, Gisborne, New Zealand", "duration"=>3, "description"=>"Rhythm and Vines is a three day music festival held in Gisborne, New Zealand across December 29th to the 31st every year. It is globally known as the first festival in the world to welcome in the first sunrise of the new year.  The festival was founded in 2003 by University of Otago friends Hamish Pinkham, Tom Gibson, and Andrew Witters. They wanted to hold an event for their friends to bring in the New Year in a safe and beautiful location with entertainment from up-and-coming and established New Zealand musicians. Little did they know that their little party would eventually become a right of passage for over 350,000 kiwis and attract international visitors and touring artists from across the globe.", "link"=>"https://www.rhythmandvines.co.nz/"}}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/festivals_controller.rb:7:in `create'
+  [1m[36mFestival Create (3.7ms)[0m  [1m[32mINSERT INTO "festivals" ("festival_name", "location", "duration", "description", "link") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["festival_name", "Rhythm & Vines"], ["location", "Waiohika Estate, Gisborne, New Zealand"], ["duration", 3], ["description", "Rhythm and Vines is a three day music festival held in Gisborne, New Zealand across December 29th to the 31st every year. It is globally known as the first festival in the world to welcome in the first sunrise of the new year.  The festival was founded in 2003 by University of Otago friends Hamish Pinkham, Tom Gibson, and Andrew Witters. They wanted to hold an event for their friends to bring in the New Year in a safe and beautiful location with entertainment from up-and-coming and established New Zealand musicians. Little did they know that their little party would eventually become a right of passage for over 350,000 kiwis and attract international visitors and touring artists from across the globe."], ["link", "https://www.rhythmandvines.co.nz/"]]
+  ↳ app/controllers/festivals_controller.rb:7:in `create'
+  [1m[36mTRANSACTION (1.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/festivals_controller.rb:7:in `create'
+Completed 200 OK in 80ms (Views: 1.2ms | ActiveRecord: 10.7ms | Allocations: 4439)
+
+
+Started DELETE "/festivals/3" for ::1 at 2021-03-30 21:33:50 +1300
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by FestivalsController#destroy as */*
+  Parameters: {"festival_name"=>"Rhythm & Vines", "location"=>"Waiohika Estate, Gisborne, New Zealand", "duration"=>3, "description"=>"Rhythm and Vines is a three day music festival held in Gisborne, New Zealand across December 29th to the 31st every year. It is globally known as the first festival in the world to welcome in the first sunrise of the new year.  The festival was founded in 2003 by University of Otago friends Hamish Pinkham, Tom Gibson, and Andrew Witters. They wanted to hold an event for their friends to bring in the New Year in a safe and beautiful location with entertainment from up-and-coming and established New Zealand musicians. Little did they know that their little party would eventually become a right of passage for over 350,000 kiwis and attract international visitors and touring artists from across the globe.", "link"=>"https://www.rhythmandvines.co.nz/", "id"=>"3", "festival"=>{"festival_name"=>"Rhythm & Vines", "location"=>"Waiohika Estate, Gisborne, New Zealand", "duration"=>3, "description"=>"Rhythm and Vines is a three day music festival held in Gisborne, New Zealand across December 29th to the 31st every year. It is globally known as the first festival in the world to welcome in the first sunrise of the new year.  The festival was founded in 2003 by University of Otago friends Hamish Pinkham, Tom Gibson, and Andrew Witters. They wanted to hold an event for their friends to bring in the New Year in a safe and beautiful location with entertainment from up-and-coming and established New Zealand musicians. Little did they know that their little party would eventually become a right of passage for over 350,000 kiwis and attract international visitors and touring artists from across the globe.", "link"=>"https://www.rhythmandvines.co.nz/"}}
+  [1m[36mFestival Load (1.3ms)[0m  [1m[34mSELECT "festivals".* FROM "festivals" WHERE "festivals"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/festivals_controller.rb:42:in `destroy'
+  [1m[36mTRANSACTION (2.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/festivals_controller.rb:42:in `destroy'
+  [1m[36mFestival Destroy (18.5ms)[0m  [1m[31mDELETE FROM "festivals" WHERE "festivals"."id" = $1[0m  [["id", 3]]
+  ↳ app/controllers/festivals_controller.rb:42:in `destroy'
+  [1m[36mTRANSACTION (44.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/festivals_controller.rb:42:in `destroy'
+Completed 200 OK in 106ms (Views: 0.3ms | ActiveRecord: 75.4ms | Allocations: 8776)
+
+
