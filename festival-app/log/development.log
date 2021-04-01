@@ -209,3 +209,119 @@ Migrating to CreateUsers (20210330091925)
   [1m[36mActiveRecord::InternalMetadata Load (25.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
   [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(3686529552143689230)[0m
   [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started DELETE "/api/users" for ::1 at 2021-04-01 20:00:16 +1300
+  [1m[35m (2.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [DELETE] "/api/users"):
+  
+Started GET "/api/users" for ::1 at 2021-04-01 20:00:20 +1300
+  
+ActionController::RoutingError (uninitialized constant Api::UsersController
+Did you mean?  Api::UsersControllers):
+  
+Started GET "/api/festival/users" for ::1 at 2021-04-01 20:00:35 +1300
+  
+ActionController::RoutingError (No route matches [GET] "/api/festival/users"):
+  
+Started GET "/api/festivals/users" for ::1 at 2021-04-01 20:00:38 +1300
+Processing by Api::FestivalsController#show as */*
+  Parameters: {"festival_name"=>"Rhythm & Vines", "location"=>"Waiohika Estate, Gisborne, New Zealand", "duration"=>3, "description"=>"Rhythm and Vines is a three day music festival held in Gisborne, New Zealand across December 29th to the 31st every year. It is globally known as the first festival in the world to welcome in the first sunrise of the new year.  The festival was founded in 2003 by University of Otago friends Hamish Pinkham, Tom Gibson, and Andrew Witters. They wanted to hold an event for their friends to bring in the New Year in a safe and beautiful location with entertainment from up-and-coming and established New Zealand musicians. Little did they know that their little party would eventually become a right of passage for over 350,000 kiwis and attract international visitors and touring artists from across the globe.", "link"=>"https://www.rhythmandvines.co.nz/", "id"=>"users", "festival"=>{"festival_name"=>"Rhythm & Vines", "location"=>"Waiohika Estate, Gisborne, New Zealand", "duration"=>3, "description"=>"Rhythm and Vines is a three day music festival held in Gisborne, New Zealand across December 29th to the 31st every year. It is globally known as the first festival in the world to welcome in the first sunrise of the new year.  The festival was founded in 2003 by University of Otago friends Hamish Pinkham, Tom Gibson, and Andrew Witters. They wanted to hold an event for their friends to bring in the New Year in a safe and beautiful location with entertainment from up-and-coming and established New Zealand musicians. Little did they know that their little party would eventually become a right of passage for over 350,000 kiwis and attract international visitors and touring artists from across the globe.", "link"=>"https://www.rhythmandvines.co.nz/"}}
+  [1m[36mFestival Load (41.8ms)[0m  [1m[34mSELECT "festivals".* FROM "festivals" WHERE "festivals"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/api/festivals_controller.rb:26:in `show'
+Completed 404 Not Found in 203ms (ActiveRecord: 162.2ms | Allocations: 3283)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Festival with 'id'=users):
+  
+app/controllers/api/festivals_controller.rb:26:in `show'
+Started GET "/festivals/users" for ::1 at 2021-04-01 20:01:06 +1300
+  
+ActionController::RoutingError (No route matches [GET] "/festivals/users"):
+  
+Started GET "/api/users" for ::1 at 2021-04-01 20:01:47 +1300
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (uninitialized constant Api::UsersController
+Did you mean?  Api::UsersControllers):
+  
+Started GET "/api/" for ::1 at 2021-04-01 20:02:18 +1300
+  
+ActionController::RoutingError (No route matches [GET] "/api"):
+  
+Started GET "/api/festivals" for ::1 at 2021-04-01 20:03:01 +1300
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::FestivalsController#index as */*
+  Parameters: {"festival_name"=>"Rhythm & Vines", "location"=>"Waiohika Estate, Gisborne, New Zealand", "duration"=>3, "description"=>"Rhythm and Vines is a three day music festival held in Gisborne, New Zealand across December 29th to the 31st every year. It is globally known as the first festival in the world to welcome in the first sunrise of the new year.  The festival was founded in 2003 by University of Otago friends Hamish Pinkham, Tom Gibson, and Andrew Witters. They wanted to hold an event for their friends to bring in the New Year in a safe and beautiful location with entertainment from up-and-coming and established New Zealand musicians. Little did they know that their little party would eventually become a right of passage for over 350,000 kiwis and attract international visitors and touring artists from across the globe.", "link"=>"https://www.rhythmandvines.co.nz/", "festival"=>{"festival_name"=>"Rhythm & Vines", "location"=>"Waiohika Estate, Gisborne, New Zealand", "duration"=>3, "description"=>"Rhythm and Vines is a three day music festival held in Gisborne, New Zealand across December 29th to the 31st every year. It is globally known as the first festival in the world to welcome in the first sunrise of the new year.  The festival was founded in 2003 by University of Otago friends Hamish Pinkham, Tom Gibson, and Andrew Witters. They wanted to hold an event for their friends to bring in the New Year in a safe and beautiful location with entertainment from up-and-coming and established New Zealand musicians. Little did they know that their little party would eventually become a right of passage for over 350,000 kiwis and attract international visitors and touring artists from across the globe.", "link"=>"https://www.rhythmandvines.co.nz/"}}
+  [1m[36mFestival Load (2.1ms)[0m  [1m[34mSELECT "festivals".* FROM "festivals"[0m
+  ↳ app/controllers/api/festivals_controller.rb:3:in `index'
+Completed 200 OK in 59ms (Views: 26.5ms | ActiveRecord: 17.5ms | Allocations: 6393)
+
+
+Started GET "/api/users" for ::1 at 2021-04-01 20:03:07 +1300
+  
+ActionController::RoutingError (uninitialized constant Api::UsersController
+Did you mean?  Api::UsersControllers):
+  
+Started GET "/api/festivals/2" for ::1 at 2021-04-01 20:04:04 +1300
+Processing by Api::FestivalsController#show as */*
+  Parameters: {"festival_name"=>"Rhythm & Vines", "location"=>"Waiohika Estate, Gisborne, New Zealand", "duration"=>3, "description"=>"Rhythm and Vines is a three day music festival held in Gisborne, New Zealand across December 29th to the 31st every year. It is globally known as the first festival in the world to welcome in the first sunrise of the new year.  The festival was founded in 2003 by University of Otago friends Hamish Pinkham, Tom Gibson, and Andrew Witters. They wanted to hold an event for their friends to bring in the New Year in a safe and beautiful location with entertainment from up-and-coming and established New Zealand musicians. Little did they know that their little party would eventually become a right of passage for over 350,000 kiwis and attract international visitors and touring artists from across the globe.", "link"=>"https://www.rhythmandvines.co.nz/", "id"=>"2", "festival"=>{"festival_name"=>"Rhythm & Vines", "location"=>"Waiohika Estate, Gisborne, New Zealand", "duration"=>3, "description"=>"Rhythm and Vines is a three day music festival held in Gisborne, New Zealand across December 29th to the 31st every year. It is globally known as the first festival in the world to welcome in the first sunrise of the new year.  The festival was founded in 2003 by University of Otago friends Hamish Pinkham, Tom Gibson, and Andrew Witters. They wanted to hold an event for their friends to bring in the New Year in a safe and beautiful location with entertainment from up-and-coming and established New Zealand musicians. Little did they know that their little party would eventually become a right of passage for over 350,000 kiwis and attract international visitors and touring artists from across the globe.", "link"=>"https://www.rhythmandvines.co.nz/"}}
+  [1m[36mFestival Load (0.6ms)[0m  [1m[34mSELECT "festivals".* FROM "festivals" WHERE "festivals"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/festivals_controller.rb:26:in `show'
+Completed 200 OK in 108ms (Views: 0.3ms | ActiveRecord: 0.8ms | Allocations: 2172)
+
+
+Started GET "/api/user" for ::1 at 2021-04-01 20:06:27 +1300
+  
+ActionController::RoutingError (No route matches [GET] "/api/user"):
+  
+Started GET "/api/users" for ::1 at 2021-04-01 20:06:31 +1300
+  
+ActionController::RoutingError (uninitialized constant Api::UsersController
+Did you mean?  Api::UsersControllers):
+  
+Started POST "/api/users" for ::1 at 2021-04-01 20:09:44 +1300
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (uninitialized constant Api::UsersController
+Did you mean?  Api::UsersControllers):
+  
+Started POST "/api/users" for ::1 at 2021-04-01 20:10:03 +1300
+  
+ActionController::RoutingError (uninitialized constant Api::UsersController
+Did you mean?  Api::UsersControllers):
+  
+Started GET "/api/users" for ::1 at 2021-04-01 20:10:35 +1300
+  
+ActionController::RoutingError (uninitialized constant Api::UsersController
+Did you mean?  Api::UsersControllers):
+  
+Started GET "/api/users" for ::1 at 2021-04-01 20:11:11 +1300
+  
+ActionController::RoutingError (uninitialized constant Api::UsersController
+Did you mean?  Api::UsersControllers):
+  
+Started GET "/api/users" for ::1 at 2021-04-01 20:16:14 +1300
+Processing by Api::UsersController#index as */*
+  Parameters: {"user"=>{"name"=>"Nicole", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (129.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/users_controller.rb:3:in `index'
+Completed 200 OK in 186ms (Views: 3.6ms | ActiveRecord: 129.1ms | Allocations: 2942)
+
+
+Started POST "/api/users" for ::1 at 2021-04-01 20:16:30 +1300
+Processing by Api::UsersController#create as */*
+  Parameters: {"user"=>{"name"=>"Nicole", "password"=>"[FILTERED]"}}
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:7:in `create'
+  [1m[36mUser Exists? (44.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."name" = $1 LIMIT $2[0m  [["name", "Nicole"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:7:in `create'
+  [1m[36mUser Create (38.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "password_digest") VALUES ($1, $2) RETURNING "id"[0m  [["name", "Nicole"], ["password_digest", "$2a$12$HNgT1rfrwMjPHPcCDVL60uFpFkVd1v7qEvGyTmIN.RDB0.JG21a9S"]]
+  ↳ app/controllers/api/users_controller.rb:7:in `create'
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/users_controller.rb:7:in `create'
+  [1m[36mUser Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."name" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["name", "Nicole"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:8:in `create'
+Completed 201 Created in 592ms (Views: 2.7ms | ActiveRecord: 112.1ms | Allocations: 5828)
+
+
