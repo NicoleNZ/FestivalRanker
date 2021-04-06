@@ -1,4 +1,5 @@
 import React from 'react';
+import { Route } from "react-router-dom";
 import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -12,6 +13,8 @@ import Grid from '@material-ui/core/Grid';
 import LockOutlinedIcon from '@material-ui/core/Icon/Icon';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
+import { SignUp } from "./signup";
+import { useState } from 'react';
 
 function Copyright() {
     return (
@@ -49,7 +52,7 @@ const useStyles = makeStyles((theme) => ({
         backgroundColor: theme.palette.secondary.main,
     },
     form: {
-        width: '100%', // Fix IE 11 issue.
+        width: '100%', 
         marginTop: theme.spacing(1),
     },
     submit: {
@@ -57,8 +60,27 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-export function SignIn() {
+const SignIn = (props) => {
     const classes = useStyles();
+
+    const [formState, setFormState] = useState({
+        username: "",
+        password: ""
+    });
+
+    const handleFieldChange = (e) => {
+        console.log('formState', formState);
+        const newState = { ...formState }
+        newState[e.target.name] = e.target.value;
+        setFormState(newState);
+        console.log('newState', newState);
+    };
+
+    const handleSignInSubmit = (e) => {
+        e.preventDefault();
+        console.log(formState); 
+        props.setIsLoggedIn(true);        
+    };
 
     return (
         <Grid container component="main" className={classes.root}>
@@ -72,16 +94,18 @@ export function SignIn() {
                     <Typography component="h1" variant="h5">
                         Sign in
                     </Typography>
-                    <form className={classes.form} noValidate>
+                    <form onSubmit={handleSignInSubmit} className={classes.form} noValidate>
                         <TextField
                             variant="outlined"
                             margin="normal"
                             required
                             fullWidth
-                            id="email"
-                            label="Email Address"
-                            name="email"
-                            autoComplete="email"
+                            id="username"
+                            label="Username"
+                            name="username"
+                            value={formState.username}
+                            onChange={handleFieldChange}
+                            autoComplete="username"
                             autoFocus
                         />
                         <TextField
@@ -93,6 +117,8 @@ export function SignIn() {
                             label="Password"
                             type="password"
                             id="password"
+                            value={formState.password} 
+                            onChange={handleFieldChange}
                             autoComplete="current-password"
                         />
                         <FormControlLabel
@@ -115,7 +141,7 @@ export function SignIn() {
                                 </Link>
                             </Grid>
                             <Grid item>
-                                <Link href="#" variant="body2">
+                                <Link href="/signup" variant="body2">
                                 {"Don't have an account? Sign Up"}
                                 </Link>
                             </Grid>
@@ -124,8 +150,15 @@ export function SignIn() {
                             <Copyright />
                         </Box>
                     </form>
+                    <Route
+                        path="/signup"
+                        component={SignUp}
+                        exact
+            />
                 </div>
             </Grid>
         </Grid>
     );
 }
+
+export { SignIn }
