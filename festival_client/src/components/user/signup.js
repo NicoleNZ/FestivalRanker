@@ -13,7 +13,9 @@ import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import { Route } from 'react-router';
-import { SignIn } from "./signin";
+import { SignIn } from "./SignIn";
+import { useHistory } from 'react-router';
+import { useState } from 'react';
 
 function Copyright() {
     return (
@@ -48,8 +50,55 @@ function Copyright() {
     },
     }));
 
-    export function SignUp() {
-    const classes = useStyles();
+    const SignUp = () => {
+    
+        const classes = useStyles();
+        const history = useHistory();
+
+        const [formState, setFormState] = useState({
+            username: "",
+            password: ""
+        });
+
+        const handleFieldChange = (e) => {
+            console.log('formState', formState);
+            const newState = { ...formState }
+            newState[e.target.name] = e.target.value;
+            console.log('newState', newState);
+            setFormState(newState);
+        };
+
+        const handleSignUpSubmit = (e) => {
+            e.preventDefault();
+            console.log(formState);
+            fetch('http://localhost:3000/api/users', {
+                method: "POST",
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({user:
+                    {
+                    name: formState.username, 
+                    password: formState.password
+                    }
+                })
+            })
+            .then(response => response.json());
+            fetch('http://localhost:3000/api/auth/login', {
+                method: "POST",
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({name: formState.username, password: formState.password})
+            })
+                .then(response => response.json())
+                .then(data => {
+                    window.localStorage.setItem('token', data.token)
+                    if (data.token) {
+                    history.replace('/festivals')
+                    }
+                });
+    };
 
     return (
         <Container component="main" maxWidth="xs">
@@ -61,40 +110,19 @@ function Copyright() {
             <Typography component="h1" variant="h5">
             Sign up
             </Typography>
-            <form className={classes.form} noValidate>
+            <form onSubmit={handleSignUpSubmit} className={classes.form} noValidate>
             <Grid container spacing={2}>
-                <Grid item xs={12} sm={6}>
-                <TextField
-                    autoComplete="fname"
-                    name="firstName"
-                    variant="outlined"
-                    required
-                    fullWidth
-                    id="firstName"
-                    label="First Name"
-                    autoFocus
-                />
-                </Grid>
-                <Grid item xs={12} sm={6}>
-                <TextField
-                    variant="outlined"
-                    required
-                    fullWidth
-                    id="lastName"
-                    label="Last Name"
-                    name="lastName"
-                    autoComplete="lname"
-                />
-                </Grid>
                 <Grid item xs={12}>
                 <TextField
                     variant="outlined"
                     required
                     fullWidth
-                    id="email"
-                    label="Email Address"
-                    name="email"
-                    autoComplete="email"
+                    id="username"
+                    value={formState.username} 
+                    onChange={handleFieldChange}
+                    label="Username"
+                    name="username"
+                    autoComplete="username"
                 />
                 </Grid>
                 <Grid item xs={12}>
@@ -106,6 +134,8 @@ function Copyright() {
                     label="Password"
                     type="password"
                     id="password"
+                    value={formState.password} 
+                    onChange={handleFieldChange}
                     autoComplete="current-password"
                 />
                 </Grid>
@@ -127,15 +157,16 @@ function Copyright() {
             </Button>
             <Grid container justify="flex-end">
                 <Grid item>
-                <Link to="/signin" variant="body2">
+                <Link href="/" variant="body2">
                     Already have an account? Sign in
                 </Link>
                 </Grid>
             </Grid>
             </form>
             <Route
-                path="/signin"
+                path="/"
                 component={SignIn}
+                exact
             />
         </div>
         <Box mt={5}>
@@ -144,3 +175,5 @@ function Copyright() {
         </Container>
     );
 }
+
+export { SignUp }

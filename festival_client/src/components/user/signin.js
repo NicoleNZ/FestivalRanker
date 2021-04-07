@@ -13,8 +13,10 @@ import Grid from '@material-ui/core/Grid';
 import LockOutlinedIcon from '@material-ui/core/Icon/Icon';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
-import { SignUp } from "./signup";
+import { SignUp } from "./SignUp";
 import { useState } from 'react';
+import { useHistory } from 'react-router';
+
 
 function Copyright() {
     return (
@@ -60,8 +62,9 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-const SignIn = (props) => {
+const SignIn = () => {
     const classes = useStyles();
+    const history = useHistory();
 
     const [formState, setFormState] = useState({
         username: "",
@@ -72,14 +75,27 @@ const SignIn = (props) => {
         console.log('formState', formState);
         const newState = { ...formState }
         newState[e.target.name] = e.target.value;
-        setFormState(newState);
         console.log('newState', newState);
+        setFormState(newState);
     };
 
     const handleSignInSubmit = (e) => {
         e.preventDefault();
-        console.log(formState); 
-        props.setIsLoggedIn(true);        
+        console.log(formState);
+        fetch('http://localhost:3000/api/auth/login', {
+            method: "POST",
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({name: formState.username, password: formState.password})
+        })
+            .then(response => response.json())
+            .then(data => {
+                window.localStorage.setItem('token', data.token)
+                if (data.token) {
+                history.replace('/festivals')
+                }
+            })
     };
 
     return (

@@ -1,10 +1,14 @@
 import React from 'react';
+
 import {
   BrowserRouter,
   Switch,
   Route
 } from 'react-router-dom';
-import { SignIn } from "./components/user/signin"; 
+import { Festival } from './components/festival/Festivals';
+import { SignIn } from "./components/user/SignIn"; 
+import { SignUp } from "./components/user/SignUp";
+import { MyFestivals } from "./components/festival/MyFestivals";
 
 function App() {
   return (
@@ -15,6 +19,13 @@ function App() {
           <Route exact path="/">
             <SignIn /> 
           </Route>
+          <Route exact path="/signup">
+            <SignUp /> 
+          </Route>
+          <Route exact path="/festivals">
+            <Festival />
+            <MyFestivals />
+          </Route>
 
         </Switch>
       </div>
@@ -22,4 +33,4 @@ function App() {
   );
 }
 
-export default App;
+export { App };
