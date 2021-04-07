@@ -1697,3 +1697,14 @@ Completed 201 Created in 333ms (Views: 1.8ms | ActiveRecord: 39.5ms | Allocation
 Completed 200 OK in 328ms (Views: 0.2ms | ActiveRecord: 13.0ms | Allocations: 5542)
 
 
+Started GET "/babel/parser/lib/index.js" for 127.0.0.1 at 2021-04-07 21:21:48 +1200
+  [1m[35m (42.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ReactController#react_app as */*
+  Parameters: {"path"=>"babel/parser/lib/index.js"}
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 0.0ms | Allocations: 1672)
+
+
+  
+ArgumentError (`render file:` should be given the absolute path to a file. '/Users/Nicole/Documents/GeneralAssembly/Unit Four/Festival Project/FestivalRanker/festival-app/public/index.html' was given instead):
+  
+app/controllers/react_controller.rb:4:in `react_app'
