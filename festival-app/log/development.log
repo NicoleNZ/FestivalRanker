@@ -1708,3 +1708,809 @@ Completed 500 Internal Server Error in 16ms (ActiveRecord: 0.0ms | Allocations: 
 ArgumentError (`render file:` should be given the absolute path to a file. '/Users/Nicole/Documents/GeneralAssembly/Unit Four/Festival Project/FestivalRanker/festival-app/public/index.html' was given instead):
   
 app/controllers/react_controller.rb:4:in `react_app'
+Started POST "/api/auth/login" for ::1 at 2021-04-09 20:57:18 +1200
+  [1m[35m (2.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::AuthController#login as */*
+  Parameters: {"name"=>"NicoleB", "password"=>"[FILTERED]", "auth"=>{"name"=>"NicoleB", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (35.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = $1 LIMIT $2[0m  [["name", "NicoleB"], ["LIMIT", 1]]
+  ↳ app/controllers/api/auth_controller.rb:5:in `login'
+Completed 200 OK in 422ms (Views: 0.6ms | ActiveRecord: 148.4ms | Allocations: 7704)
+
+
+Started GET "/api/festivals" for ::1 at 2021-04-09 20:57:19 +1200
+Processing by Api::FestivalsController#index as */*
+  Parameters: {"festival"=>{}}
+Filter chain halted as :user_exists rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.2ms | ActiveRecord: 12.2ms | Allocations: 150)
+
+
+Started GET "/api/festivals" for ::1 at 2021-04-09 20:57:48 +1200
+Processing by Api::FestivalsController#index as */*
+  Parameters: {"festival"=>{}}
+Filter chain halted as :user_exists rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 129)
+
+
+Started GET "/api/festivals" for ::1 at 2021-04-09 20:58:42 +1200
+Processing by Api::FestivalsController#index as */*
+  Parameters: {"festival"=>{}}
+Filter chain halted as :user_exists rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 129)
+
+
+Started GET "/api/festivals" for ::1 at 2021-04-09 20:58:46 +1200
+Processing by Api::FestivalsController#index as */*
+  Parameters: {"festival"=>{}}
+Filter chain halted as :user_exists rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 129)
+
+
+Started GET "/api/festivals" for ::1 at 2021-04-09 21:03:46 +1200
+Processing by Api::FestivalsController#index as */*
+  Parameters: {"festival"=>{}}
+Filter chain halted as :user_exists rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.3ms | Allocations: 129)
+
+
+Started GET "/api/festivals" for ::1 at 2021-04-09 21:08:43 +1200
+Processing by Api::FestivalsController#index as */*
+  Parameters: {"festival"=>{}}
+Filter chain halted as :user_exists rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | Allocations: 128)
+
+
+Started GET "/api/festivals" for ::1 at 2021-04-09 21:11:40 +1200
+Processing by Api::FestivalsController#index as */*
+  Parameters: {"festival"=>{}}
+Filter chain halted as :user_exists rendered or redirected
+Completed 401 Unauthorized in 2ms (Views: 1.1ms | Allocations: 128)
+
+
+Started GET "/api/festivals" for ::1 at 2021-04-09 21:22:33 +1200
+Processing by Api::FestivalsController#index as */*
+  Parameters: {"festival"=>{}}
+Filter chain halted as :user_exists rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.2ms | Allocations: 128)
+
+
+Started GET "/api/festivals" for ::1 at 2021-04-09 21:22:38 +1200
+Processing by Api::FestivalsController#index as */*
+  Parameters: {"festival"=>{}}
+Filter chain halted as :user_exists rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.3ms | Allocations: 128)
+
+
+Started GET "/api/festivals" for ::1 at 2021-04-09 21:22:40 +1200
+Processing by Api::FestivalsController#index as */*
+  Parameters: {"festival"=>{}}
+Filter chain halted as :user_exists rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.2ms | Allocations: 128)
+
+
+Started GET "/api/festivals" for ::1 at 2021-04-09 21:23:05 +1200
+Processing by Api::FestivalsController#index as */*
+  Parameters: {"festival"=>{}}
+Filter chain halted as :user_exists rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | Allocations: 128)
+
+
+Started GET "/api/festivals" for ::1 at 2021-04-09 21:23:09 +1200
+Processing by Api::FestivalsController#index as */*
+  Parameters: {"festival"=>{}}
+Filter chain halted as :user_exists rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.2ms | Allocations: 128)
+
+
+Started GET "/babel/parser/lib/index.js" for 127.0.0.1 at 2021-04-09 21:24:14 +1200
+Started GET "/babel/core/lib/parser/index.js" for 127.0.0.1 at 2021-04-09 21:24:14 +1200
+Processing by ReactController#react_app as */*
+  Parameters: {"path"=>"babel/parser/lib/index.js"}
+Processing by ReactController#react_app as */*
+  Parameters: {"path"=>"babel/core/lib/parser/index.js"}
+Completed 500 Internal Server Error in 0ms (Allocations: 210)
+
+
+  
+ArgumentError (`render file:` should be given the absolute path to a file. '/Users/Nicole/Documents/GeneralAssembly/Unit Four/Festival Project/FestivalRanker/festival-app/public/index.html' was given instead):
+  
+app/controllers/react_controller.rb:4:in `react_app'
+Completed 500 Internal Server Error in 27ms (Allocations: 1662)
+
+
+  
+ArgumentError (`render file:` should be given the absolute path to a file. '/Users/Nicole/Documents/GeneralAssembly/Unit Four/Festival Project/FestivalRanker/festival-app/public/index.html' was given instead):
+  
+app/controllers/react_controller.rb:4:in `react_app'
+Started GET "/api/festivals" for ::1 at 2021-04-09 21:24:14 +1200
+Processing by Api::FestivalsController#index as */*
+  Parameters: {"festival"=>{}}
+Filter chain halted as :user_exists rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | Allocations: 128)
+
+
+Started GET "/api/festivals" for ::1 at 2021-04-09 21:24:17 +1200
+Processing by Api::FestivalsController#index as */*
+  Parameters: {"festival"=>{}}
+Filter chain halted as :user_exists rendered or redirected
+Completed 401 Unauthorized in 2ms (Views: 0.4ms | Allocations: 128)
+
+
+Started GET "/babel/parser/lib/index.js" for 127.0.0.1 at 2021-04-09 21:33:40 +1200
+Processing by ReactController#react_app as */*
+  Parameters: {"path"=>"babel/parser/lib/index.js"}
+Completed 500 Internal Server Error in 2ms (Allocations: 211)
+
+
+  
+ArgumentError (`render file:` should be given the absolute path to a file. '/Users/Nicole/Documents/GeneralAssembly/Unit Four/Festival Project/FestivalRanker/festival-app/public/index.html' was given instead):
+  
+app/controllers/react_controller.rb:4:in `react_app'
+Started GET "/babel/core/lib/parser/index.js" for 127.0.0.1 at 2021-04-09 21:33:40 +1200
+Processing by ReactController#react_app as */*
+  Parameters: {"path"=>"babel/core/lib/parser/index.js"}
+Completed 500 Internal Server Error in 1ms (Allocations: 210)
+
+
+  
+ArgumentError (`render file:` should be given the absolute path to a file. '/Users/Nicole/Documents/GeneralAssembly/Unit Four/Festival Project/FestivalRanker/festival-app/public/index.html' was given instead):
+  
+app/controllers/react_controller.rb:4:in `react_app'
+Started GET "/babel/parser/lib/index.js" for 127.0.0.1 at 2021-04-09 21:33:41 +1200
+Processing by ReactController#react_app as */*
+  Parameters: {"path"=>"babel/parser/lib/index.js"}
+Completed 500 Internal Server Error in 1ms (Allocations: 210)
+
+
+  
+ArgumentError (`render file:` should be given the absolute path to a file. '/Users/Nicole/Documents/GeneralAssembly/Unit Four/Festival Project/FestivalRanker/festival-app/public/index.html' was given instead):
+  
+app/controllers/react_controller.rb:4:in `react_app'
+Started GET "/babel/core/lib/parser/index.js" for 127.0.0.1 at 2021-04-09 21:33:41 +1200
+Processing by ReactController#react_app as */*
+  Parameters: {"path"=>"babel/core/lib/parser/index.js"}
+Completed 500 Internal Server Error in 1ms (Allocations: 211)
+
+
+  
+ArgumentError (`render file:` should be given the absolute path to a file. '/Users/Nicole/Documents/GeneralAssembly/Unit Four/Festival Project/FestivalRanker/festival-app/public/index.html' was given instead):
+  
+app/controllers/react_controller.rb:4:in `react_app'
+Started GET "/babel/core/lib/parser/index.js" for 127.0.0.1 at 2021-04-09 21:33:41 +1200
+Started GET "/babel/parser/lib/index.js" for 127.0.0.1 at 2021-04-09 21:33:41 +1200
+Processing by ReactController#react_app as */*
+  Parameters: {"path"=>"babel/core/lib/parser/index.js"}
+Processing by ReactController#react_app as */*
+  Parameters: {"path"=>"babel/parser/lib/index.js"}
+Completed 500 Internal Server Error in 4ms (Allocations: 392)
+
+
+  
+ArgumentError (`render file:` should be given the absolute path to a file. '/Users/Nicole/Documents/GeneralAssembly/Unit Four/Festival Project/FestivalRanker/festival-app/public/index.html' was given instead):
+  
+app/controllers/react_controller.rb:4:in `react_app'
+Completed 500 Internal Server Error in 3ms (Allocations: 210)
+
+
+  
+ArgumentError (`render file:` should be given the absolute path to a file. '/Users/Nicole/Documents/GeneralAssembly/Unit Four/Festival Project/FestivalRanker/festival-app/public/index.html' was given instead):
+  
+app/controllers/react_controller.rb:4:in `react_app'
+Started GET "/babel/parser/lib/index.js" for 127.0.0.1 at 2021-04-09 21:33:41 +1200
+Processing by ReactController#react_app as */*
+  Parameters: {"path"=>"babel/parser/lib/index.js"}
+Completed 500 Internal Server Error in 1ms (Allocations: 210)
+
+
+  
+ArgumentError (`render file:` should be given the absolute path to a file. '/Users/Nicole/Documents/GeneralAssembly/Unit Four/Festival Project/FestivalRanker/festival-app/public/index.html' was given instead):
+  
+app/controllers/react_controller.rb:4:in `react_app'
+Started GET "/api/festivals" for ::1 at 2021-04-09 21:33:41 +1200
+Processing by Api::FestivalsController#index as */*
+  Parameters: {"festival"=>{}}
+Filter chain halted as :user_exists rendered or redirected
+Completed 401 Unauthorized in 3ms (Views: 0.2ms | Allocations: 128)
+
+
+Started GET "/api/festivals" for ::1 at 2021-04-09 21:38:00 +1200
+Processing by Api::FestivalsController#index as */*
+  Parameters: {"festival"=>{}}
+Filter chain halted as :user_exists rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.2ms | Allocations: 128)
+
+
+Started GET "/babel/parser/lib/index.js" for 127.0.0.1 at 2021-04-09 21:41:07 +1200
+Processing by ReactController#react_app as */*
+  Parameters: {"path"=>"babel/parser/lib/index.js"}
+Completed 500 Internal Server Error in 3ms (Allocations: 211)
+
+
+  
+ArgumentError (`render file:` should be given the absolute path to a file. '/Users/Nicole/Documents/GeneralAssembly/Unit Four/Festival Project/FestivalRanker/festival-app/public/index.html' was given instead):
+  
+app/controllers/react_controller.rb:4:in `react_app'
+Started GET "/api/festivals" for ::1 at 2021-04-09 21:41:09 +1200
+Processing by Api::FestivalsController#index as */*
+  Parameters: {"festival"=>{}}
+Filter chain halted as :user_exists rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.3ms | Allocations: 128)
+
+
+Started GET "/api/festivals" for ::1 at 2021-04-09 21:41:12 +1200
+Processing by Api::FestivalsController#index as */*
+  Parameters: {"festival"=>{}}
+Filter chain halted as :user_exists rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.2ms | Allocations: 128)
+
+
+Started GET "/api/festivals" for ::1 at 2021-04-09 21:41:29 +1200
+Processing by Api::FestivalsController#index as */*
+  Parameters: {"festival"=>{}}
+Filter chain halted as :user_exists rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.2ms | Allocations: 128)
+
+
+Started GET "/api/festivals" for ::1 at 2021-04-09 21:42:15 +1200
+Processing by Api::FestivalsController#index as */*
+  Parameters: {"festival"=>{}}
+Filter chain halted as :user_exists rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.3ms | Allocations: 128)
+
+
+Started GET "/api/festivals" for ::1 at 2021-04-09 21:42:38 +1200
+Processing by Api::FestivalsController#index as */*
+  Parameters: {"festival"=>{}}
+Filter chain halted as :user_exists rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | Allocations: 128)
+
+
+Started GET "/api/festivals" for ::1 at 2021-04-09 21:44:58 +1200
+Processing by Api::FestivalsController#index as */*
+  Parameters: {"festival"=>{}}
+Filter chain halted as :user_exists rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.2ms | Allocations: 128)
+
+
+Started GET "/api/festivals" for ::1 at 2021-04-09 21:45:28 +1200
+Processing by Api::FestivalsController#index as */*
+  Parameters: {"festival"=>{}}
+Filter chain halted as :user_exists rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.2ms | Allocations: 128)
+
+
+Started GET "/api/festivals" for ::1 at 2021-04-09 21:48:22 +1200
+Processing by Api::FestivalsController#index as */*
+  Parameters: {"festival"=>{}}
+Filter chain halted as :user_exists rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.2ms | Allocations: 128)
+
+
+Started GET "/api/festivals" for ::1 at 2021-04-09 21:48:26 +1200
+Processing by Api::FestivalsController#index as */*
+  Parameters: {"festival"=>{}}
+Filter chain halted as :user_exists rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.2ms | Allocations: 128)
+
+
+Started GET "/api/festivals" for ::1 at 2021-04-09 21:49:36 +1200
+Processing by Api::FestivalsController#index as */*
+  Parameters: {"user"=>{"name"=>"SusanB", "password"=>"[FILTERED]"}, "festival"=>{}}
+Filter chain halted as :user_exists rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | Allocations: 128)
+
+
+Started GET "/api/festivals" for ::1 at 2021-04-09 21:53:58 +1200
+Processing by Api::FestivalsController#index as */*
+  Parameters: {"festival"=>{}}
+Filter chain halted as :user_exists rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.2ms | Allocations: 128)
+
+
+Started GET "/api/festivals" for ::1 at 2021-04-09 21:58:07 +1200
+Processing by Api::FestivalsController#index as */*
+  Parameters: {"user"=>{"name"=>"SusanB", "password"=>"[FILTERED]"}, "festival"=>{}}
+Filter chain halted as :user_exists rendered or redirected
+Completed 401 Unauthorized in 4ms (Views: 2.0ms | Allocations: 128)
+
+
+Started GET "/api/festivals" for ::1 at 2021-04-09 21:59:26 +1200
+Processing by Api::FestivalsController#index as */*
+  Parameters: {"user"=>{"name"=>"SusanB", "password"=>"[FILTERED]"}, "festival"=>{}}
+Filter chain halted as :user_exists rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.2ms | Allocations: 128)
+
+
+Started GET "/api/festivals" for ::1 at 2021-04-09 21:59:39 +1200
+Processing by Api::FestivalsController#index as */*
+  Parameters: {"user"=>{"name"=>"SusanB", "password"=>"[FILTERED]"}, "festival"=>{}}
+Filter chain halted as :user_exists rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.2ms | Allocations: 128)
+
+
+Started GET "/api/festivals" for ::1 at 2021-04-09 21:59:40 +1200
+Processing by Api::FestivalsController#index as */*
+  Parameters: {"user"=>{"name"=>"SusanB", "password"=>"[FILTERED]"}, "festival"=>{}}
+Filter chain halted as :user_exists rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.5ms | Allocations: 128)
+
+
+Started GET "/babel/parser/lib/index.js" for 127.0.0.1 at 2021-04-09 21:59:46 +1200
+Processing by ReactController#react_app as */*
+  Parameters: {"path"=>"babel/parser/lib/index.js"}
+Completed 500 Internal Server Error in 5ms (Allocations: 210)
+
+
+  
+ArgumentError (`render file:` should be given the absolute path to a file. '/Users/Nicole/Documents/GeneralAssembly/Unit Four/Festival Project/FestivalRanker/festival-app/public/index.html' was given instead):
+  
+app/controllers/react_controller.rb:4:in `react_app'
+Started GET "/api/festivals" for ::1 at 2021-04-09 22:00:28 +1200
+Processing by Api::FestivalsController#index as */*
+  Parameters: {"festival"=>{}}
+Filter chain halted as :user_exists rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.5ms | Allocations: 128)
+
+
+Started GET "/api/festivals" for ::1 at 2021-04-09 22:01:11 +1200
+Processing by Api::FestivalsController#index as */*
+  Parameters: {"festival"=>{}}
+Filter chain halted as :user_exists rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.2ms | Allocations: 128)
+
+
+Started GET "/api/festivals" for ::1 at 2021-04-09 22:02:56 +1200
+Processing by Api::FestivalsController#index as */*
+  Parameters: {"festival"=>{}}
+Filter chain halted as :user_exists rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.4ms | Allocations: 128)
+
+
+Started GET "/api/festivals" for ::1 at 2021-04-09 22:03:30 +1200
+Processing by Api::FestivalsController#index as */*
+  Parameters: {"festival"=>{}}
+Filter chain halted as :user_exists rendered or redirected
+Completed 401 Unauthorized in 2ms (Views: 0.6ms | Allocations: 128)
+
+
+Started GET "/babel/parser/lib/index.js" for 127.0.0.1 at 2021-04-09 22:05:21 +1200
+Processing by ReactController#react_app as */*
+  Parameters: {"path"=>"babel/parser/lib/index.js"}
+Completed 500 Internal Server Error in 1ms (Allocations: 210)
+
+
+  
+ArgumentError (`render file:` should be given the absolute path to a file. '/Users/Nicole/Documents/GeneralAssembly/Unit Four/Festival Project/FestivalRanker/festival-app/public/index.html' was given instead):
+  
+app/controllers/react_controller.rb:4:in `react_app'
+Started GET "/api/festivals" for ::1 at 2021-04-09 22:05:21 +1200
+Processing by Api::FestivalsController#index as */*
+  Parameters: {"festival"=>{}}
+Filter chain halted as :user_exists rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.2ms | Allocations: 128)
+
+
+Started GET "/api/festivals" for ::1 at 2021-04-09 22:05:24 +1200
+Processing by Api::FestivalsController#index as */*
+  Parameters: {"festival"=>{}}
+Filter chain halted as :user_exists rendered or redirected
+Completed 401 Unauthorized in 2ms (Views: 0.4ms | Allocations: 128)
+
+
+Started GET "/api/festivals" for ::1 at 2021-04-09 22:07:55 +1200
+Processing by Api::FestivalsController#index as */*
+  Parameters: {"festival"=>{}}
+Filter chain halted as :user_exists rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | Allocations: 128)
+
+
+Started POST "/api/auth/login" for ::1 at 2021-04-09 22:13:09 +1200
+Processing by Api::AuthController#login as */*
+  Parameters: {"name"=>"NicoleB", "password"=>"[FILTERED]", "auth"=>{"name"=>"NicoleB", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = $1 LIMIT $2[0m  [["name", "NicoleB"], ["LIMIT", 1]]
+  ↳ app/controllers/api/auth_controller.rb:5:in `login'
+Completed 200 OK in 307ms (Views: 0.5ms | ActiveRecord: 20.7ms | Allocations: 2789)
+
+
+Started GET "/api/festivals" for ::1 at 2021-04-09 22:13:10 +1200
+Processing by Api::FestivalsController#index as */*
+  Parameters: {"festival"=>{}}
+Filter chain halted as :user_exists rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 128)
+
+
+Started GET "/api/festivals" for ::1 at 2021-04-09 22:14:35 +1200
+Processing by Api::FestivalsController#index as */*
+  Parameters: {"festival"=>{}}
+Filter chain halted as :user_exists rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 128)
+
+
+Started GET "/api/festivals" for ::1 at 2021-04-09 22:15:23 +1200
+Processing by Api::FestivalsController#index as */*
+  Parameters: {"festival"=>{}}
+Filter chain halted as :user_exists rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 128)
+
+
+Started GET "/api/festivals" for ::1 at 2021-04-09 22:15:56 +1200
+Processing by Api::FestivalsController#index as */*
+  Parameters: {"festival"=>{}}
+Filter chain halted as :user_exists rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 128)
+
+
+Started GET "/api/festivals" for ::1 at 2021-04-09 22:20:58 +1200
+Processing by Api::FestivalsController#index as */*
+  Parameters: {"festival"=>{}}
+Filter chain halted as :user_exists rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.2ms | Allocations: 128)
+
+
+Started GET "/babel/parser/lib/index.js" for 127.0.0.1 at 2021-04-09 22:20:58 +1200
+Processing by ReactController#react_app as */*
+  Parameters: {"path"=>"babel/parser/lib/index.js"}
+Completed 500 Internal Server Error in 1ms (Allocations: 211)
+
+
+  
+ArgumentError (`render file:` should be given the absolute path to a file. '/Users/Nicole/Documents/GeneralAssembly/Unit Four/Festival Project/FestivalRanker/festival-app/public/index.html' was given instead):
+  
+app/controllers/react_controller.rb:4:in `react_app'
+Started GET "/babel/parser/lib/index.js" for 127.0.0.1 at 2021-04-09 22:20:58 +1200
+Processing by ReactController#react_app as */*
+  Parameters: {"path"=>"babel/parser/lib/index.js"}
+Completed 500 Internal Server Error in 1ms (Allocations: 210)
+
+
+  
+ArgumentError (`render file:` should be given the absolute path to a file. '/Users/Nicole/Documents/GeneralAssembly/Unit Four/Festival Project/FestivalRanker/festival-app/public/index.html' was given instead):
+  
+app/controllers/react_controller.rb:4:in `react_app'
+Started GET "/babel/parser/lib/index.js" for 127.0.0.1 at 2021-04-09 22:20:58 +1200
+Processing by ReactController#react_app as */*
+  Parameters: {"path"=>"babel/parser/lib/index.js"}
+Completed 500 Internal Server Error in 0ms (Allocations: 210)
+
+
+  
+ArgumentError (`render file:` should be given the absolute path to a file. '/Users/Nicole/Documents/GeneralAssembly/Unit Four/Festival Project/FestivalRanker/festival-app/public/index.html' was given instead):
+  
+app/controllers/react_controller.rb:4:in `react_app'
+Started GET "/api/festivals" for ::1 at 2021-04-09 22:20:59 +1200
+Processing by Api::FestivalsController#index as */*
+  Parameters: {"festival"=>{}}
+Filter chain halted as :user_exists rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.2ms | Allocations: 128)
+
+
+Started GET "/api/festivals" for ::1 at 2021-04-09 22:20:59 +1200
+Processing by Api::FestivalsController#index as */*
+  Parameters: {"festival"=>{}}
+Filter chain halted as :user_exists rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | Allocations: 128)
+
+
+Started GET "/api/festivals" for ::1 at 2021-04-09 22:21:47 +1200
+Processing by Api::FestivalsController#index as */*
+  Parameters: {"festival"=>{}}
+Filter chain halted as :user_exists rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | Allocations: 128)
+
+
+Started GET "/api/festivals" for ::1 at 2021-04-09 22:21:55 +1200
+Processing by Api::FestivalsController#index as */*
+  Parameters: {"festival"=>{}}
+Filter chain halted as :user_exists rendered or redirected
+Completed 401 Unauthorized in 2ms (Views: 0.2ms | Allocations: 128)
+
+
+Started GET "/api/festivals" for ::1 at 2021-04-09 22:23:07 +1200
+Processing by Api::FestivalsController#index as */*
+  Parameters: {"festival"=>{}}
+Filter chain halted as :user_exists rendered or redirected
+Completed 401 Unauthorized in 11ms (Views: 0.6ms | Allocations: 129)
+
+
+Started GET "/api/festivals" for ::1 at 2021-04-09 22:23:07 +1200
+Processing by Api::FestivalsController#index as */*
+  Parameters: {"festival"=>{}}
+Filter chain halted as :user_exists rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.3ms | Allocations: 128)
+
+
+Started GET "/api/festivals" for ::1 at 2021-04-09 22:23:24 +1200
+Processing by Api::FestivalsController#index as */*
+  Parameters: {"festival"=>{}}
+Filter chain halted as :user_exists rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.2ms | Allocations: 128)
+
+
+Started GET "/api/festivals" for ::1 at 2021-04-09 22:23:32 +1200
+Processing by Api::FestivalsController#index as */*
+  Parameters: {"festival"=>{}}
+Filter chain halted as :user_exists rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.2ms | Allocations: 128)
+
+
+Started GET "/babel/parser/lib/index.js" for 127.0.0.1 at 2021-04-09 22:26:24 +1200
+Processing by ReactController#react_app as */*
+  Parameters: {"path"=>"babel/parser/lib/index.js"}
+Completed 500 Internal Server Error in 1ms (Allocations: 211)
+
+
+  
+ArgumentError (`render file:` should be given the absolute path to a file. '/Users/Nicole/Documents/GeneralAssembly/Unit Four/Festival Project/FestivalRanker/festival-app/public/index.html' was given instead):
+  
+app/controllers/react_controller.rb:4:in `react_app'
+Started GET "/api/festivals" for ::1 at 2021-04-09 22:26:25 +1200
+Processing by Api::FestivalsController#index as */*
+  Parameters: {"festival"=>{}}
+Filter chain halted as :user_exists rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.2ms | Allocations: 128)
+
+
+Started GET "/api/festivals" for ::1 at 2021-04-09 22:26:30 +1200
+Processing by Api::FestivalsController#index as */*
+  Parameters: {"festival"=>{}}
+Filter chain halted as :user_exists rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.2ms | Allocations: 128)
+
+
+Started POST "/api/auth/login" for ::1 at 2021-04-09 22:27:19 +1200
+Processing by Api::AuthController#login as */*
+  Parameters: {"name"=>"NicoleB", "password"=>"[FILTERED]", "auth"=>{"name"=>"NicoleB", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = $1 LIMIT $2[0m  [["name", "NicoleB"], ["LIMIT", 1]]
+  ↳ app/controllers/api/auth_controller.rb:5:in `login'
+Completed 200 OK in 310ms (Views: 0.2ms | ActiveRecord: 11.9ms | Allocations: 2778)
+
+
+Started GET "/api/festivals" for ::1 at 2021-04-09 22:27:19 +1200
+Processing by Api::FestivalsController#index as */*
+  Parameters: {"festival"=>{}}
+Filter chain halted as :user_exists rendered or redirected
+Completed 401 Unauthorized in 16ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 128)
+
+
+Started GET "/api/festivals" for ::1 at 2021-04-09 22:28:31 +1200
+Processing by Api::FestivalsController#index as */*
+  Parameters: {"user"=>{"name"=>"SusanB", "password"=>"[FILTERED]"}, "festival"=>{}}
+Filter chain halted as :user_exists rendered or redirected
+Completed 401 Unauthorized in 2ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 128)
+
+
+Started GET "/api/" for ::1 at 2021-04-09 22:30:19 +1200
+Processing by ReactController#react_app as */*
+  Parameters: {"user"=>{"name"=>"SusanB", "password"=>"[FILTERED]"}, "path"=>"api", "react"=>{"user"=>{"name"=>"SusanB", "password"=>"[FILTERED]"}}}
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 0.0ms | Allocations: 214)
+
+
+  
+ArgumentError (`render file:` should be given the absolute path to a file. '/Users/Nicole/Documents/GeneralAssembly/Unit Four/Festival Project/FestivalRanker/festival-app/public/index.html' was given instead):
+  
+app/controllers/react_controller.rb:4:in `react_app'
+Started GET "/api/welcome" for ::1 at 2021-04-09 22:30:29 +1200
+Processing by ReactController#react_app as */*
+  Parameters: {"user"=>{"name"=>"SusanB", "password"=>"[FILTERED]"}, "path"=>"api/welcome", "react"=>{"user"=>{"name"=>"SusanB", "password"=>"[FILTERED]"}}}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 210)
+
+
+  
+ArgumentError (`render file:` should be given the absolute path to a file. '/Users/Nicole/Documents/GeneralAssembly/Unit Four/Festival Project/FestivalRanker/festival-app/public/index.html' was given instead):
+  
+app/controllers/react_controller.rb:4:in `react_app'
+Started GET "/api/festivals" for ::1 at 2021-04-09 22:32:16 +1200
+Processing by Api::FestivalsController#index as */*
+  Parameters: {"festival"=>{}}
+Filter chain halted as :user_exists rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 128)
+
+
+Started GET "/api/festivals" for ::1 at 2021-04-09 22:32:20 +1200
+Processing by Api::FestivalsController#index as */*
+  Parameters: {"festival"=>{}}
+Filter chain halted as :user_exists rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 128)
+
+
+Started GET "/api/festivals" for ::1 at 2021-04-09 22:39:50 +1200
+Processing by Api::FestivalsController#index as */*
+  Parameters: {"festival"=>{}}
+Filter chain halted as :user_exists rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.2ms | Allocations: 128)
+
+
+Started GET "/babel/parser/lib/index.js" for 127.0.0.1 at 2021-04-09 22:39:50 +1200
+Started GET "/babel/core/lib/parser/index.js" for 127.0.0.1 at 2021-04-09 22:39:50 +1200
+Processing by ReactController#react_app as */*
+  Parameters: {"path"=>"babel/parser/lib/index.js"}
+Completed 500 Internal Server Error in 3ms (Allocations: 212)
+
+
+Processing by ReactController#react_app as */*
+  Parameters: {"path"=>"babel/core/lib/parser/index.js"}
+  
+ArgumentError (`render file:` should be given the absolute path to a file. '/Users/Nicole/Documents/GeneralAssembly/Unit Four/Festival Project/FestivalRanker/festival-app/public/index.html' was given instead):
+  
+app/controllers/react_controller.rb:4:in `react_app'
+Completed 500 Internal Server Error in 1ms (Allocations: 212)
+
+
+  
+ArgumentError (`render file:` should be given the absolute path to a file. '/Users/Nicole/Documents/GeneralAssembly/Unit Four/Festival Project/FestivalRanker/festival-app/public/index.html' was given instead):
+  
+app/controllers/react_controller.rb:4:in `react_app'
+Started GET "/babel/core/lib/parser/index.js" for 127.0.0.1 at 2021-04-09 22:39:50 +1200
+Processing by ReactController#react_app as */*
+  Parameters: {"path"=>"babel/core/lib/parser/index.js"}
+Completed 500 Internal Server Error in 1ms (Allocations: 210)
+
+
+  
+ArgumentError (`render file:` should be given the absolute path to a file. '/Users/Nicole/Documents/GeneralAssembly/Unit Four/Festival Project/FestivalRanker/festival-app/public/index.html' was given instead):
+  
+app/controllers/react_controller.rb:4:in `react_app'
+Started GET "/babel/parser/lib/index.js" for 127.0.0.1 at 2021-04-09 22:39:50 +1200
+Processing by ReactController#react_app as */*
+  Parameters: {"path"=>"babel/parser/lib/index.js"}
+Completed 500 Internal Server Error in 1ms (Allocations: 210)
+
+
+  
+ArgumentError (`render file:` should be given the absolute path to a file. '/Users/Nicole/Documents/GeneralAssembly/Unit Four/Festival Project/FestivalRanker/festival-app/public/index.html' was given instead):
+  
+app/controllers/react_controller.rb:4:in `react_app'
+Started GET "/api/festivals" for ::1 at 2021-04-09 22:39:51 +1200
+Processing by Api::FestivalsController#index as */*
+  Parameters: {"festival"=>{}}
+Filter chain halted as :user_exists rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.2ms | Allocations: 128)
+
+
+Started GET "/api/festivals" for ::1 at 2021-04-09 22:40:53 +1200
+Processing by Api::FestivalsController#index as */*
+  Parameters: {"festival"=>{}}
+Filter chain halted as :user_exists rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.2ms | Allocations: 128)
+
+
+Started GET "/api/festivals" for ::1 at 2021-04-09 22:44:15 +1200
+Processing by Api::FestivalsController#index as */*
+  Parameters: {"festival"=>{}}
+Filter chain halted as :user_exists rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.2ms | Allocations: 128)
+
+
+Started GET "/api/festivals" for ::1 at 2021-04-09 22:45:21 +1200
+Processing by Api::FestivalsController#index as */*
+  Parameters: {"festival"=>{}}
+Filter chain halted as :user_exists rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.7ms | Allocations: 128)
+
+
+Started GET "/api/festivals" for ::1 at 2021-04-09 22:45:25 +1200
+Processing by Api::FestivalsController#index as */*
+  Parameters: {"festival"=>{}}
+Filter chain halted as :user_exists rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.4ms | Allocations: 128)
+
+
+Started GET "/api/festivals" for ::1 at 2021-04-09 22:45:28 +1200
+Processing by Api::FestivalsController#index as */*
+  Parameters: {"festival"=>{}}
+Filter chain halted as :user_exists rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.2ms | Allocations: 128)
+
+
+Started GET "/api/festivals" for ::1 at 2021-04-09 22:45:52 +1200
+Processing by Api::FestivalsController#index as */*
+  Parameters: {"festival"=>{}}
+Filter chain halted as :user_exists rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.3ms | Allocations: 128)
+
+
+Started GET "/api/festivals" for ::1 at 2021-04-09 22:55:15 +1200
+Processing by Api::FestivalsController#index as */*
+  Parameters: {"festival"=>{}}
+Filter chain halted as :user_exists rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.3ms | Allocations: 128)
+
+
+Started GET "/api/festivals" for ::1 at 2021-04-09 22:55:20 +1200
+Processing by Api::FestivalsController#index as */*
+  Parameters: {"festival"=>{}}
+Filter chain halted as :user_exists rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.2ms | Allocations: 128)
+
+
+Started GET "/api/festivals" for ::1 at 2021-04-09 22:55:25 +1200
+Processing by Api::FestivalsController#index as */*
+  Parameters: {"festival"=>{}}
+Filter chain halted as :user_exists rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.2ms | Allocations: 128)
+
+
+Started GET "/api/festivals" for ::1 at 2021-04-09 22:55:27 +1200
+Processing by Api::FestivalsController#index as */*
+  Parameters: {"festival"=>{}}
+Filter chain halted as :user_exists rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.2ms | Allocations: 128)
+
+
+Started GET "/api/festivals" for ::1 at 2021-04-09 22:55:33 +1200
+Processing by Api::FestivalsController#index as */*
+  Parameters: {"festival"=>{}}
+Filter chain halted as :user_exists rendered or redirected
+Completed 401 Unauthorized in 9ms (Views: 1.9ms | Allocations: 129)
+
+
+Started GET "/api/festivals" for ::1 at 2021-04-09 22:56:14 +1200
+Processing by Api::FestivalsController#index as */*
+  Parameters: {"festival"=>{}}
+Filter chain halted as :user_exists rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.5ms | Allocations: 128)
+
+
+Started GET "/api/festivals" for ::1 at 2021-04-09 22:59:49 +1200
+Processing by Api::FestivalsController#index as */*
+  Parameters: {"festival"=>{}}
+Filter chain halted as :user_exists rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | Allocations: 128)
+
+
+Started GET "/api/festivals" for ::1 at 2021-04-09 23:00:43 +1200
+Processing by Api::FestivalsController#index as */*
+  Parameters: {"festival"=>{}}
+Filter chain halted as :user_exists rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.2ms | Allocations: 128)
+
+
+Started GET "/api/festivals" for ::1 at 2021-04-09 23:00:57 +1200
+Processing by Api::FestivalsController#index as */*
+  Parameters: {"festival"=>{}}
+Filter chain halted as :user_exists rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.2ms | Allocations: 128)
+
+
+Started GET "/api/festivals" for ::1 at 2021-04-09 23:01:38 +1200
+Processing by Api::FestivalsController#index as */*
+  Parameters: {"festival"=>{}}
+Filter chain halted as :user_exists rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | Allocations: 128)
+
+
+Started GET "/api/festivals" for ::1 at 2021-04-09 23:02:35 +1200
+Processing by Api::FestivalsController#index as */*
+  Parameters: {"festival"=>{}}
+Filter chain halted as :user_exists rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.2ms | Allocations: 128)
+
+
+Started GET "/api/festivals" for ::1 at 2021-04-09 23:03:12 +1200
+Processing by Api::FestivalsController#index as */*
+  Parameters: {"festival"=>{}}
+Filter chain halted as :user_exists rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.2ms | Allocations: 128)
+
+
+Started POST "/api/auth/login" for ::1 at 2021-04-09 23:03:32 +1200
+Processing by Api::AuthController#login as */*
+  Parameters: {"name"=>"NicoleB", "password"=>"[FILTERED]", "auth"=>{"name"=>"NicoleB", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = $1 LIMIT $2[0m  [["name", "NicoleB"], ["LIMIT", 1]]
+  ↳ app/controllers/api/auth_controller.rb:5:in `login'
+Completed 200 OK in 330ms (Views: 0.4ms | ActiveRecord: 8.9ms | Allocations: 2778)
+
+
+Started GET "/api/festivals" for ::1 at 2021-04-09 23:03:33 +1200
+Processing by Api::FestivalsController#index as */*
+  Parameters: {"festival"=>{}}
+Filter chain halted as :user_exists rendered or redirected
+Completed 401 Unauthorized in 7ms (Views: 0.6ms | ActiveRecord: 0.0ms | Allocations: 128)
+
+
+Started GET "/api/festivals" for ::1 at 2021-04-09 23:03:55 +1200
+Processing by Api::FestivalsController#index as */*
+  Parameters: {"festival"=>{}}
+Filter chain halted as :user_exists rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 128)
+
+

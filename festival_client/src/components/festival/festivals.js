@@ -10,11 +10,12 @@ import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import { useHistory } from 'react-router'; 
-import { BrowserRouter as Route, Switch } from "react-router-dom";
+import { BrowserRouter, Route, Switch, Link } from "react-router-dom";
 import { FestivalList } from "./FestivalList";
 import { AddFestival } from "./AddFestival";
 import { EditFestival } from "./EditFestival";
 import { DeleteFestival } from "./DeleteFestival";
+
 
     const useStyles = makeStyles((theme) => ({
     icon: {
@@ -99,7 +100,7 @@ const Festival = () => {
                 description: description,
                 link: link
             };
-            console.log(typeof festivalList);
+        console.log(typeof festivalList);
         const newFestivals = [...festivalList];
         newFestivals.push(newFestival); //this is pushing the newly created festival into the array of festival objects
         setFestivalList(newFestivals); //this 'updates' the festivalList in the memory to contain the newly created festival
@@ -108,6 +109,7 @@ const Festival = () => {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
+                "Authorization": token
             },
             body: JSON.stringify(newFestival),
         })
@@ -121,17 +123,18 @@ const Festival = () => {
     method: "GET",
     headers: {
         "Content-Type": "application/json",
+        "Authorization": token
     }
     })
     .then((response) => {
         console.log("response: ", response);
         return response.json();
     })
-    .then((festivalData) => {
-        console.log("Current festivalData is: ", festivalData);
-        setFestivalList(festivalData); 
-    });
-    }, []);  
+    .then((data) => {
+            console.log("Current festivalData is: ", data);
+            setFestivalList(data); 
+        });
+    }, [token]);  
     
     const handleFestivalClick = (festivalIndex) => {
         console.log("festivalIndex: ", festivalIndex);        
@@ -217,6 +220,7 @@ const Festival = () => {
     };
 
     return (
+        <BrowserRouter>
         <React.Fragment>
         <CssBaseline />
         <AppBar position="relative">
@@ -243,43 +247,37 @@ const Festival = () => {
                 <div className={classes.heroButtons}>
                 <Grid container spacing={2} justify="center">
                 <Grid item>
-                    <Button variant="contained" color="primary" to="/create">
-                        Add New Festival
-                    </Button>
+                    <Link className="nav-link" to="/create">Add Festival</Link>
                     </Grid>
                     <Grid item>
-                    <Button variant="contained" color="primary" to="/edit">
-                        Edit Festival
-                    </Button>
+                    <Link className="nav-link" colour="secondary" to="/edit">Edit Festival</Link>
                     </Grid>
                     <Grid item>
-                    <Button variant="contained" color="primary" to="/delete">
-                        Delete Festival
-                    </Button>
+                    <Link className="nav-link" to="/delete">Delete Festival</Link> 
                     </Grid>
                     <Grid container spacing={2} justify="center">
                     <Grid item>
-                    <FestivalList products={festivalList} handleClick={handleFestivalClick} />
+                    <FestivalList festivals={festivalList} handleClick={handleFestivalClick} />
                     </Grid>
                 </Grid>
                 </Grid>
                 </div>
             </Container>
-            </div>
-
-        </main>
-        <Switch>
+            <Switch>
                 <Route path="/create">
                     <AddFestival submit={handleAddFestival}/>
                 </Route>
                 <Route path="/edit">
-                    <EditFestival submit={handleEditFestival} product={festivalEdit} />
+                    <EditFestival submit={handleEditFestival} festival={festivalEdit} />
                 </Route>
                 <Route path="/delete">
-                    <DeleteFestival submit={handleDeleteFestival} product={festivalDelete} />
+                    <DeleteFestival submit={handleDeleteFestival} festival={festivalDelete} />
                 </Route>
-        </Switch>
+            </Switch>
+            </div>
+        </main>
         </React.Fragment>
+        </BrowserRouter>
     );
 }
 
