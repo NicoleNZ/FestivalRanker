@@ -100,8 +100,9 @@ const Festival = () => {
                 description: description,
                 link: link
             };
-        console.log(typeof festivalList);
+        console.log("Type of festivalList: ", typeof festivalList);
         const newFestivals = [...festivalList];
+        console.log("Type of newFestivals: ", typeof newFestivals);
         newFestivals.push(newFestival); //this is pushing the newly created festival into the array of festival objects
         setFestivalList(newFestivals); //this 'updates' the festivalList in the memory to contain the newly created festival
         
@@ -109,36 +110,18 @@ const Festival = () => {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
-                "Authorization": token
+                'token': window.localStorage.getItem('token')
             },
             body: JSON.stringify(newFestival),
         })
         .then((response) => {
         console.log("response: ", response);
-        });   
+        })  
     };
 
-    useEffect(() => {
-    fetch("http://localhost:3000/api/festivals", { 
-    method: "GET",
-    headers: {
-        "Content-Type": "application/json",
-        "Authorization": token
-    }
-    })
-    .then((response) => {
-        console.log("response: ", response);
-        return response.json();
-    })
-    .then((data) => {
-            console.log("Current festivalData is: ", data);
-            setFestivalList(data); 
-        });
-    }, [token]);  
-    
     const handleFestivalClick = (festivalIndex) => {
         console.log("festivalIndex: ", festivalIndex);        
-        const festival = festivalIndex[festivalIndex];
+        const festival = festivalList[festivalIndex];
         console.log("festival: ", festival);
         setFestivalEdit(festival);
         setFestivalDelete(festival);
@@ -146,74 +129,67 @@ const Festival = () => {
 
     const handleEditFestival = (festival) => {
         console.log("handleEditFestival: ", festival);
-        const foundFestival = festivalList.findIndex((festivalEl) => {
-            return festivalEl._id === festival._id
-        });
+        const foundFestival = festivalList.findIndex((festival) => {
+            console.log("id", festival.id);
+            return festival.id;
+            });
             const allFestivals = [...festivalList];
             allFestivals[foundFestival] = festival;
             console.log("festival: ", festival)
-            console.log("festival._id: ", festival._id);
-        fetch(`http://localhost:3000/api/festivals/${festival._id}`, {
+            console.log("festival._id: ", festival.id);
+        fetch(`http://localhost:3000/api/festivals/${festival.id}`, {
             method: 'PATCH',
             headers: {
                 "Content-Type": "application/json",
+                'token': window.localStorage.getItem('token')
             },
             body: JSON.stringify(festival)
         })
         .then((response) => {
             console.log('Patch response:', response);
         });
-
-        fetch("http://localhost:3000/api/festivals", {
-            method: "GET",
-            headers: {
-                "Content-Type": "application/json",
-            }
-            })
-            .then((response) => {
-                console.log("Response: ", response);
-                return response.json();
-            })
-            .then((festivalData) => {
-                console.log("Current festivalData is: ", festivalData);
-                setFestivalList(festivalData); 
-            });    
+        
     };
 
     const handleDeleteFestival = (festival) => {
         console.log("handleDeleteFestival: ", festival);
-        const foundFestival = festivalList.findIndex((festivalEl) => {
-            return festivalEl._id === festival._id
+        const foundFestival = festivalList.findIndex((festival) => {
+            return festival.id
         });
             const allFestivals = [...festivalList];
             allFestivals[foundFestival] = festival;
             console.log("festival: ", festival)
-            console.log("festival._id: ", festival._id);
-        fetch(`http://localhost:3000/api/festivals/${festival._id}`, {
+            console.log("festival._id: ", festival.id);
+        fetch(`http://localhost:3000/api/festivals/${festival.id}`, {
             method: 'DELETE',
             headers: {
                 "Content-Type": "application/json",
+                'token': window.localStorage.getItem('token')
             },
         })
         .then((response) => {
             console.log('Delete response:', response);
         });  
-        
-        fetch("http://localhost:3000/api/festivals", { 
-            method: "GET",
-            headers: {
-                "Content-Type": "application/json",
-            }
-            })
-            .then((response) => {
-                console.log("Response: ", response);
-                return response.json();
-            })
-            .then((festivalData) => {
-                console.log("Current festivalData is: ", festivalData);
-                setFestivalList(festivalData); 
-            });
+
     };          
+
+    useEffect(() => {
+        fetch("http://localhost:3000/api/festivals", { 
+        method: "GET",
+        headers: {
+            "Content-Type": "application/json",
+            'token': window.localStorage.getItem('token')
+        }
+        })
+        .then((response) => {
+            console.log("response: ", response);
+            return response.json();
+        })
+        .then((data) => {
+                console.log("Current festivalData is: ", data);
+                setFestivalList(data); 
+            });
+        }, []);  
 
     if (token === null) {
         return null

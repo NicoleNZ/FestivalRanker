@@ -12,7 +12,7 @@ const DeleteFestival = (props) => {
 
     useEffect(() => {
         setFormState(props.festival);
-        }, [props.festival]); //need this to be able to render products into the delete field when clicked on the UI
+        }, [props.festival]); //need this to be able to render festivals into the delete field when clicked on the UI
 
     const handleDeleteFestival = (e) => {
         e.preventDefault();

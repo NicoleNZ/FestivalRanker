@@ -15,9 +15,11 @@ const EditFestival = (props) => {
         }, [props.festival]); //need this to be able to render festivals into the edit field when clicked on the UI
 
     const handleFieldChange = (e) => {
-        const newState = { ...formState }; //newState will therefore equal whatever is written in the fields
+        const newState = { ...formState };
+        console.log("formState", formState)  //newState will therefore equal whatever is written in the fields
         newState[e.target.name] = e.target.value; 
         setFormState(newState); //updates the formState in the memory
+        console.log("formState", formState)
     };
     
     const handleEditFestival = (e) => {
